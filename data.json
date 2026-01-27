@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "name": "General Knowledge",
+      "items": [
+        "Types of Fruit",
+        "Countries in Europe",
+        "Harry Potter Characters",
+        "Planets in the Solar System",
+        "Capital Cities",
+        "Dog Breeds",
+        "Car Brands",
+        "Things in a Bathroom"
+      ]
+    },
+    {
+      "name": "Pop Culture",
+      "items": [
+        "Marvel Movies",
+        "Taylor Swift Songs",
+        "Netflix Shows",
+        "Video Game Consoles",
+        "Famous TikTokers",
+        "Pokemon",
+        "Star Wars Characters"
+      ]
+    },
+    {
+      "name": "Spicy / Hard",
+      "items": [
+        "Reasons to break up",
+        "Things you shouldn't say to a cop",
+        "Crimes",
+        "Bald Celebrities",
+        "Things that smell bad",
+        "Words that end in 'Z'"
+      ]
+    }
+  ]
+}
