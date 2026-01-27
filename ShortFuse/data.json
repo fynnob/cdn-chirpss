@@ -1,0 +1,160 @@
+{
+  "categories": [
+    {
+      "name": "Sports Fanatic",
+      "items": [
+        "Football (Soccer) Players",
+        "NBA Teams",
+        "Olympic Sports",
+        "Famous Tennis Players",
+        "Sports Played with a Ball",
+        "F1 Drivers",
+        "NFL Teams",
+        "Martial Arts Styles",
+        "Sports Brands (Nike, etc.)",
+        "Stadiums",
+        "Famous Boxers",
+        "Extreme Sports",
+        "Positions in Football",
+        "Sports Trophies",
+        "Gym Equipment"
+      ]
+    },
+    {
+      "name": "Pop Culture",
+      "items": [
+        "Marvel Superheroes",
+        "Star Wars Characters",
+        "Harry Potter Spells",
+        "Disney Princesses",
+        "Sitcoms (Friends, Office...)",
+        "Pixar Movies",
+        "Famous YouTubers",
+        "Video Game Consoles",
+        "Batman Villains",
+        "K-Pop Groups",
+        "Reality TV Shows",
+        "Celebrities named 'Chris'",
+        "Netflix Originals",
+        "Pokemon Gen 1",
+        "Memes",
+        "Horror Movie Killers"
+      ]
+    },
+    {
+      "name": "Music & Audio",
+      "items": [
+        "Rappers",
+        "Musical Instruments",
+        "Boy Bands",
+        "Female Pop Stars",
+        "80s Rock Bands",
+        "Songs by Taylor Swift",
+        "Music Genres",
+        "Famous DJs",
+        "Things found in a Studio",
+        "Streaming Services",
+        "National Anthems",
+        "One Hit Wonders",
+        "Songs with a color in the title"
+      ]
+    },
+    {
+      "name": "Geography & Travel",
+      "items": [
+        "Countries in Europe",
+        "US States",
+        "Capital Cities",
+        "Currencies",
+        "Languages",
+        "Major Rivers",
+        "Deserts",
+        "Islands",
+        "Airlines",
+        "Things in a Suitcase",
+        "Tourist Attractions in London",
+        "Countries starting with 'C'",
+        "Asian Countries",
+        "Oceans & Seas",
+        "Items in a Hotel Room"
+      ]
+    },
+    {
+      "name": "Food & Drink",
+      "items": [
+        "Pizza Toppings",
+        "Soda Brands",
+        "Types of Cheese",
+        "Breakfast Foods",
+        "Fast Food Chains",
+        "Fruits starting with 'P'",
+        "Vegetables that are Green",
+        "Cocktails",
+        "Chocolate Bars",
+        "Spices & Herbs",
+        "Ice Cream Flavors",
+        "Sushi Rolls",
+        "Things you bake",
+        "Types of Pasta",
+        "Cereal Brands"
+      ]
+    },
+    {
+      "name": "Brands & Logos",
+      "items": [
+        "Luxury Car Brands",
+        "Clothing Brands",
+        "Tech Companies",
+        "Make-up Brands",
+        "Supermarket Chains",
+        "Shoe Brands",
+        "Phone Apps",
+        "Car Models",
+        "Watches",
+        "Social Media Platforms",
+        "Gaming Companies",
+        "Banks"
+      ]
+    },
+    {
+      "name": "School & Science",
+      "items": [
+        "Elements on the Periodic Table",
+        "Internal Organs",
+        "Planets",
+        "Bones in the body",
+        "Dog Breeds",
+        "Animals that lay eggs",
+        "Math Terms",
+        "Presidents / Leaders",
+        "Types of Clouds",
+        "Dinosaurs",
+        "Things found in a Classroom",
+        "School Subjects",
+        "Colors in the Rainbow",
+        "Units of Measurement"
+      ]
+    },
+    {
+      "name": "Chaos & Random",
+      "items": [
+        "Things that are sticky",
+        "Reasons to call the police",
+        "Things you find in a trash can",
+        "Excuses for being late",
+        "Things you shouldn't say at a funeral",
+        "Items in a woman's purse",
+        "Things that smell bad",
+        "Words ending in 'Z'",
+        "Things you lick",
+        "Places you shouldn't be naked",
+        "Bad habits",
+        "Things that are sharp",
+        "Reasons to break up",
+        "Things you can't buy",
+        "White things",
+        "Things that make noise"
+      ]
+    }
+  ]
+}
