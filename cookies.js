@@ -1,14 +1,14 @@
 /**
- * cookies.js - 2026 Edition
+ * cookies.js - 2026 Edition (GTM Updated)
  * Hosted at: https://cdn.fynn.qzz.io/cookies.js
  */
 
 (function() {
     'use strict';
-
+    
     const CONFIG = {
         key: 'chirpss_analytics_consent',
-        ga_id: 'G-SV2022ERX5',
+        gtm_id: 'GTM-T4GHNF47', // New GTM ID
         consent_types: {
             ad_storage: 'denied',
             ad_user_data: 'denied',
@@ -16,9 +16,9 @@
             analytics_storage: 'denied',
         }
     };
-
+    
     const isGerman = window.location.href.includes('/De/') || document.documentElement.lang === 'de';
-
+    
     const TEXT = isGerman ? {
         msg: 'Wir verwenden Cookies, um dein Spielerlebnis zu verbessern und zu analysieren.',
         learn: 'Mehr erfahren.',
@@ -28,26 +28,51 @@
     } : {
         msg: 'We use cookies to improve and analyze your gaming experience.',
         learn: 'Learn more.',
-        link: 'https://chirpss.github.io/En/cookies',
+        link: 'https://gc.fynn.qzz.io/En/cookies',
         decline: 'Decline',
         accept: 'Accept'
     };
-
-    // 1. Init Google Consent Mode
+    
+    // 1. Initialize dataLayer & Default Consent
     window.dataLayer = window.dataLayer || [];
+    
     function gtag() { dataLayer.push(arguments); }
+    
+    // Set default consent to 'denied' immediately
     gtag('consent', 'default', CONFIG.consent_types);
-
-    // 2. Load GA Script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga_id}`;
-    document.head.appendChild(script);
-
-    gtag('js', new Date());
-    gtag('config', CONFIG.ga_id, { 'anonymize_ip': true });
-
-    // 3. UI Generator
+    
+    // 2. Load Google Tag Manager (Replaces direct GA load)
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', CONFIG.gtm_id);
+    
+    // 3. Inject GTM NoScript (Body)
+    function injectNoScript() {
+        if (document.getElementById('gtm-noscript')) return;
+        const ns = document.createElement('noscript');
+        ns.id = 'gtm-noscript';
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.googletagmanager.com/ns.html?id=${CONFIG.gtm_id}`;
+        iframe.height = "0";
+        iframe.width = "0";
+        iframe.style.display = "none";
+        iframe.style.visibility = "hidden";
+        ns.appendChild(iframe);
+        document.body.insertBefore(ns, document.body.firstChild);
+    }
+    
+    // Ensure NoScript is loaded when body is ready
+    if (document.body) injectNoScript();
+    else document.addEventListener('DOMContentLoaded', injectNoScript);
+    
+    // 4. UI Generator
     function injectStyles() {
         if (document.getElementById('chirpss-cookie-style')) return;
         const style = document.createElement('style');
@@ -76,7 +101,7 @@
         `;
         document.head.appendChild(style);
     }
-
+    
     function createBanner() {
         injectStyles();
         if (document.getElementById('cookie-banner')) return;
@@ -93,28 +118,40 @@
         `;
         document.body.appendChild(banner);
         setTimeout(() => banner.classList.add('visible'), 500);
-
+        
         document.getElementById('cb-accept').addEventListener('click', () => updateConsent('granted'));
         document.getElementById('cb-decline').addEventListener('click', () => updateConsent('denied'));
     }
-
+    
     function updateConsent(state) {
         localStorage.setItem(CONFIG.key, state);
         const banner = document.getElementById('cookie-banner');
         if (banner) banner.classList.remove('visible');
+        
+        // Push the update to GTM
         if (state === 'granted') {
             gtag('consent', 'update', {
-                'ad_storage': 'granted', 'ad_user_data': 'granted',
-                'ad_personalization': 'granted', 'analytics_storage': 'granted'
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
             });
+            // Push a custom event to signal GTM that consent was updated
+            dataLayer.push({ 'event': 'consent_updated' });
         }
     }
-
+    
+    // 5. Check Logic
     const savedStatus = localStorage.getItem(CONFIG.key);
+    
+    // If no choice made yet, show banner
     if (!savedStatus) {
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', createBanner);
         else createBanner();
-    } else if (savedStatus === 'granted') {
+    }
+    // If choice was granted previously, restore it
+    else if (savedStatus === 'granted') {
         updateConsent('granted');
     }
+    
 })();
