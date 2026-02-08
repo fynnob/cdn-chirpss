@@ -1,30 +1,32 @@
 window.WinRegistry.Village = (context) => {
     const alive = context.players.filter(p => p.isAlive);
     
-    // 1. Check for active Werewolves
-    const wolves = alive.filter(p => p.team === 'Werewolf');
-    
-    // 2. Check for Serial Killer
+    // 1. Identify Threats
+    const wolves = alive.filter(p => p.team === 'Werewolf'); // Includes Cub, Shaman, etc.
+    const whiteWolf = alive.find(p => p.role === 'White Werewolf');
     const sk = alive.find(p => p.role === 'Serial Killer');
+    const arsonist = alive.find(p => p.role === 'Arsonist');
+    const cultLeader = alive.find(p => p.role === 'Cult Leader');
 
-    // 3. Check for Alive Lovers
-    // If context.links exists and contains IDs, check if any of those players are in the 'alive' list
+    // 2. Check for Alive Lovers (They form their own team)
     let loversAlive = false;
     if (context.links && context.links.length > 0) {
         loversAlive = alive.some(p => context.links.includes(p.id));
     }
 
-    // Village Win Condition:
-    // - No Werewolves alive
-    // - No Serial Killer alive
-    // - No Lovers alive
-    // (Jester is ignored, so Village CAN win if Jester is the only one left with them)
-    if (wolves.length === 0 && !sk && !loversAlive) {
+    // 3. Win Condition: Zero threats remaining
+    if (wolves.length === 0 && !whiteWolf && !sk && !arsonist && !cultLeader && !loversAlive) {
+        
+        // Bonus: Check if Survivor is alive to mention them
+        const survivor = alive.find(p => p.role === 'Survivor');
+        let msg = 'The Village has won! All threats are destroyed.';
+        if (survivor) msg += ' (The Survivor also wins!)';
+
         return {
             winner: 'Village',
-            message: 'The Village has won! All threats (Wolves, SK, and Lovers) are gone.',
+            message: msg,
             color: 'text-green-400',
-            priority: 10 // Checked last, so other wins take precedence
+            priority: 10
         };
     }
     return null;

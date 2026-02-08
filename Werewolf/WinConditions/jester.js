@@ -1,14 +1,14 @@
 window.WinRegistry.Jester = (context) => {
-    // Jester wins if the person who JUST died (lynched) was the Jester
-    // context.lynchedId is passed from the Game engine during a vote
+    // Only triggers if a Lynch just happened
     if (context.lynchedId) {
         const victim = context.players.find(p => p.id === context.lynchedId);
+        
         if (victim && victim.role === 'Jester') {
             return {
                 winner: 'Jester',
-                message: 'JESTER WINS! They tricked you into voting them out.',
+                message: 'The Jester tricked you all! They win!',
                 color: 'text-pink-500',
-                priority: 100 // Highest priority (Game ends immediately)
+                priority: 100 // Highest priority, interrupts everything
             };
         }
     }
