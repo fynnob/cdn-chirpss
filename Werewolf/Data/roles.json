@@ -1,0 +1,40 @@
+{
+  "roles": {
+    "Werewolf": {
+      "name": "Werewolf",
+      "team": "Werewolf",
+      "emoji": "🐺",
+      "description": "Devour a villager each night.",
+      "script": "werewolf.js",
+      "priority": 20,
+      "default": 1
+    },
+    "Seer": {
+      "name": "Seer",
+      "team": "Village",
+      "emoji": "🔮",
+      "description": "Reveal one player's true team each night.",
+      "script": "seer.js",
+      "priority": 10,
+      "default": 1
+    },
+    "Doctor": {
+      "name": "Doctor",
+      "team": "Village",
+      "emoji": "💊",
+      "description": "Protect one player from death.",
+      "script": "doctor.js",
+      "priority": 30,
+      "default": 1
+    },
+    "Villager": {
+      "name": "Villager",
+      "team": "Village",
+      "emoji": "🌾",
+      "description": "Find the evils and vote them out.",
+      "script": null,
+      "priority": 100,
+      "default": 99
+    }
+  }
+}
