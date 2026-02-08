@@ -1,21 +1,18 @@
 window.RoleRegistry.Doctor = {
     renderUI: (context, me) => {
-        // Doctor can save anyone alive (including self)
         const targets = context.players.filter(p => p.isAlive);
         
         return `
-            <div class="animate-fade-in">
-                <h2 class="text-4xl font-black text-blue-400 mb-2 uppercase tracking-widest">Doctor</h2>
-                <p class="mb-8 text-gray-400 font-bold">Choose someone to protect.</p>
+            <div class="text-center animate-fade-in">
+                <div class="inline-block text-6xl mb-2 filter drop-shadow-lg">💊</div>
+                <h2 class="text-3xl font-black text-blue-400 uppercase tracking-widest mb-1">Doctor</h2>
+                <p class="text-blue-300/50 text-xs font-bold uppercase tracking-widest mb-6">Protect the Innocent</p>
                 <div class="grid grid-cols-2 gap-3">
                     ${targets.map(p => 
-                        `<button onclick="window.RoleRegistry.Doctor.handle('${p.id}')" class="btn bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/30">${p.name}</button>`
+                        `<button onclick="window.finishTurn({ doctorSave: '${p.id}' })" class="btn bg-blue-900/40 border-blue-500/30 hover:bg-blue-600 hover:border-blue-400 shadow-lg shadow-blue-900/20">${p.name}</button>`
                     ).join('')}
                 </div>
             </div>
         `;
-    },
-    handle: (targetId) => {
-        window.finishTurn({ doctorSave: targetId });
     }
 };

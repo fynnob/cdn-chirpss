@@ -1,44 +1,90 @@
 {
   "roles": {
+    "Villager": {
+      "name": "Villager",
+      "team": "Village",
+      "emoji": "🌾",
+      "description": "Find the evils and vote them out during the day.",
+      "hasNightAction": false,
+      "priority": 100,
+      "default": 0,
+      "max": 99
+    },
     "Werewolf": {
       "name": "Werewolf",
       "team": "Werewolf",
       "emoji": "🐺",
-      "description": "Devour a villager each night.",
+      "description": "Wake up and choose a victim to devour.",
+      "hasNightAction": true,
       "script": "werewolf.js",
-      "priority": 20,
-      "default": 1,
-      "max": 99
-    },
-    "Seer": {
-      "name": "Seer",
-      "team": "Village",
-      "emoji": "🔮",
-      "description": "Reveal one player's true team each night.",
-      "script": "seer.js",
       "priority": 10,
       "default": 1,
-      "max": 1
+      "max": 99
     },
     "Doctor": {
       "name": "Doctor",
       "team": "Village",
       "emoji": "💊",
-      "description": "Protect one player from death.",
+      "description": "Protect one player from attacks each night.",
+      "hasNightAction": true,
       "script": "doctor.js",
-      "priority": 30,
+      "priority": 15,
       "default": 1,
       "max": 1
     },
-    "Villager": {
-      "name": "Villager",
+    "Seer": {
+      "name": "Seer",
       "team": "Village",
-      "emoji": "🌾",
-      "description": "Find the evils and vote them out.",
-      "script": null,
+      "emoji": "🔮",
+      "description": "Gaze into the crystal ball to reveal a player's team.",
+      "hasNightAction": true,
+      "script": "seer.js",
+      "priority": 20,
+      "default": 1,
+      "max": 1
+    },
+    "Witch": {
+      "name": "Witch",
+      "team": "Village",
+      "emoji": "🧙‍♀️",
+      "description": "See who died. Use a potion to Heal them or Kill someone else.",
+      "hasNightAction": true,
+      "script": "witch.js",
+      "priority": 25,
+      "default": 0,
+      "max": 1
+    },
+    "Cupid": {
+      "name": "Cupid",
+      "team": "Village",
+      "emoji": "💘",
+      "description": "Link two players as Lovers. If one dies, the other dies too.",
+      "hasNightAction": true,
+      "script": "cupid.js",
+      "priority": 5,
+      "default": 0,
+      "max": 1
+    },
+    "SerialKiller": {
+      "name": "Serial Killer",
+      "team": "Neutral",
+      "emoji": "🔪",
+      "description": "Kill one player every night. Win alone.",
+      "hasNightAction": true,
+      "script": "serial_killer.js",
+      "priority": 30,
+      "default": 0,
+      "max": 1
+    },
+    "Jester": {
+      "name": "Jester",
+      "team": "Neutral",
+      "emoji": "🤡",
+      "description": "Trick the village into voting you out to win.",
+      "hasNightAction": false,
       "priority": 100,
       "default": 0,
-      "max": 99
+      "max": 1
     }
   }
 }
