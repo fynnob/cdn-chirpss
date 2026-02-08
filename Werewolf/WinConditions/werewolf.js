@@ -3,35 +3,22 @@ window.WinRegistry.Werewolf = (context) => {
     const wolves = alive.filter(p => p.team === 'Werewolf').length;
     const total = alive.length;
     const nonWolves = total - wolves; 
-    
+
+    // THREATS: These roles stop a Werewolf victory
+    const whiteWolf = alive.find(p => p.role === 'White Werewolf');
     const sk = alive.find(p => p.role === 'Serial Killer');
     const arsonist = alive.find(p => p.role === 'Arsonist');
-    const whiteWolf = alive.find(p => p.role === 'White Werewolf');
     const cultLeader = alive.find(p => p.role === 'Cult Leader');
 
-    // NEW: Check for "Forbidden Love" (Mixed-Team Lovers)
-    let mixedLoversAlive = false;
-    if (context.links && context.links.length === 2) {
-        const [id1, id2] = context.links;
-        const p1 = alive.find(p => p.id === id1);
-        const p2 = alive.find(p => p.id === id2);
-        
-        // If both lovers are alive and they are on DIFFERENT teams, it's a stalemate for the pack
-        if (p1 && p2 && p1.team !== p2.team) {
-            mixedLoversAlive = true;
-        }
-    }
+    // 1. If a White Werewolf is alive, the pack cannot win (The traitor is still among them)
+    if (whiteWolf) return null;
 
-    // Win if:
-    // 1. Pack exists
-    // 2. Pack outnumbers rest
-    // 3. No Solo Killers
-    // 4. NO Mixed Lovers (They must be dealt with first!)
-    if (wolves > 0 && wolves >= nonWolves && !sk && !arsonist && !whiteWolf && !cultLeader && !mixedLoversAlive) {
+    // 2. Standard Win: Wolves >= Everyone else, and no solo killers/cults
+    if (wolves > 0 && wolves >= nonWolves && !sk && !arsonist && !cultLeader) {
         return {
             winner: 'Werewolf',
-            message: 'The Werewolves have overrun the village.',
-            color: 'text-red-600',
+            message: 'The pack has overrun the village.',
+            color: 'text-red-500',
             priority: 20
         };
     }
