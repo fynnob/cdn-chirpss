@@ -19,18 +19,18 @@ window.RoleRegistry.Cupid = {
         const targets = context.players.filter(p => p.isAlive);
 
         return `
-            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+            <div class="text-center animate-fade-in bg-slate-900/60 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl backdrop-blur-md relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] animate-pulse">💘</div>
                 <h2 class="text-3xl font-black text-pink-400 uppercase tracking-widest mb-1">Cupid</h2>
                 <p class="text-gray-400 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Choose two players to fall in love</p>
                 
                 <div class="grid grid-cols-2 gap-2 mb-6">
                     ${targets.map(p => 
-                        `<button id="cupid-btn-${p.id}" onclick="window.RoleRegistry.Cupid.toggle('${p.id}')" class="btn border-pink-500/30 text-pink-100 hover:bg-pink-500/20">${p.name}</button>`
+                        `<button id="cupid-btn-${p.id}" onclick="window.RoleRegistry.Cupid.toggle('${p.id}')" class="btn border-pink-500/30 text-pink-100  active:scale-95 transition-transform ">${p.name}</button>`
                     ).join('')}
                 </div>
 
-                <button onclick="window.RoleRegistry.Cupid.confirm()" class="w-full py-4 bg-pink-600 text-white font-black rounded-xl shadow-lg shadow-pink-900/50 hover:bg-pink-500 transition-all">
+                <button onclick="window.RoleRegistry.Cupid.confirm()" class="w-full py-4 bg-pink-600 text-white font-black rounded-xl shadow-lg shadow-pink-900/50  transition-all active:scale-95 transition-transform">
                     LINK LOVERS
                 </button>
             </div>

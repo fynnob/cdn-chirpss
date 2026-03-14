@@ -3,19 +3,19 @@ window.RoleRegistry.AuraSeer = {
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
         
         return `
-            <div id="aura-ui" class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+            <div id="aura-ui" class="text-center animate-fade-in bg-slate-900/60 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl backdrop-blur-md relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] animate-pulse">✨</div>
                 <h2 class="text-3xl font-black text-indigo-300 uppercase tracking-widest mb-1">Aura Seer</h2>
                 <div class="grid grid-cols-2 gap-2 mt-6">
                     ${targets.map(p => 
-                        `<button onclick="window.RoleRegistry.AuraSeer.reveal('${p.id}')" class="btn bg-indigo-900/40 border-indigo-500/30 hover:bg-indigo-600">${p.name}</button>`
+                        `<button onclick="window.RoleRegistry.AuraSeer.reveal('${p.id}')" class="btn bg-indigo-900/40 border-indigo-500/30  active:scale-95 transition-transform ">${p.name}</button>`
                     ).join('')}
                 </div>
             </div>
             <div id="aura-result" class="hidden text-center py-10">
                 <h2 class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">The Aura is...</h2>
                 <h1 id="aura-text" class="text-4xl font-black text-white mb-6">...</h1>
-                <button onclick="window.finishTurn()" class="w-full py-4 bg-white text-slate-900 font-bold rounded-xl">Close Eyes</button>
+                <button onclick="window.finishTurn()" class="w-full py-4 bg-white text-slate-900 font-bold rounded-xl active:scale-95 transition-transform">Close Eyes</button>
             </div>
         `;
     },

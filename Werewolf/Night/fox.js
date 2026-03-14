@@ -3,24 +3,24 @@ window.RoleRegistry.Fox = {
     
     renderUI: (context, me) => {
         if(me.foxLostPower) {
-             return `<div class="text-center"><h2 class="text-red-400">Power Lost</h2><button class="btn btn-action mt-4" onclick="finishTurn()">Sleep</button></div>`;
+             return `<div class="text-center"><h2 class="text-red-400">Power Lost</h2><button class="btn btn-action mt-4 active:scale-95 transition-transform " onclick="finishTurn()">Sleep</button></div>`;
         }
 
         window.RoleRegistry.Fox.selection = [];
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
 
         return `
-            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+            <div class="text-center animate-fade-in bg-slate-900/60 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl backdrop-blur-md relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2">🦊</div>
                 <h2 class="text-3xl font-black text-orange-400 uppercase tracking-widest mb-1">Fox</h2>
                 <p class="text-orange-300/50 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Select 3 players to sniff</p>
                 
                 <div class="grid grid-cols-3 gap-2 mb-4">
                     ${targets.map(p => 
-                        `<button id="fox-${p.id}" onclick="window.RoleRegistry.Fox.toggle('${p.id}')" class="btn text-xs h-20 bg-orange-900/20 border-orange-500/30">${p.name}</button>`
+                        `<button id="fox-${p.id}" onclick="window.RoleRegistry.Fox.toggle('${p.id}')" class="btn text-xs h-20 bg-orange-900/20 border-orange-500/30 active:scale-95 transition-transform ">${p.name}</button>`
                     ).join('')}
                 </div>
-                <button onclick="window.RoleRegistry.Fox.sniff()" class="btn btn-action">SNIFF</button>
+                <button onclick="window.RoleRegistry.Fox.sniff()" class="btn btn-action active:scale-95 transition-transform ">SNIFF</button>
             </div>`;
     },
     toggle: (id) => {

@@ -2,23 +2,23 @@ window.RoleRegistry.ApprenticeSeer = {
     renderUI: (context, me) => {
         // 'promoted' flag is set in Game.html startNightPhase if Seer is dead
         if (!me.promoted) {
-            return `<div class="text-center"><h2 class="text-gray-400">Studying... (Waiting for Seer to die)</h2><button class="btn btn-action mt-4" onclick="finishTurn()">Sleep</button></div>`;
+            return `<div class="text-center"><h2 class="text-gray-400">Studying... (Waiting for Seer to die)</h2><button class="btn btn-action mt-4 active:scale-95 transition-transform " onclick="finishTurn()">Sleep</button></div>`;
         }
 
         // Exact copy of Seer logic
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
         return `
-            <div id="seer-ui" class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+            <div id="seer-ui" class="text-center animate-fade-in bg-slate-900/60 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl backdrop-blur-md relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2">🎓</div>
                 <h2 class="text-3xl font-black text-purple-400 uppercase tracking-widest mb-1">Seer (Promoted)</h2>
                 <div class="grid grid-cols-2 gap-3 mt-4">
-                    ${targets.map(p => `<button onclick="window.RoleRegistry.Seer.reveal('${p.id}')" class="btn bg-purple-900/40">${p.name}</button>`).join('')}
+                    ${targets.map(p => `<button onclick="window.RoleRegistry.Seer.reveal('${p.id}')" class="btn bg-purple-900/40 active:scale-95 transition-transform ">${p.name}</button>`).join('')}
                 </div>
             </div>
             <div id="seer-result" class="hidden text-center py-10">
                 <h1 id="result-name" class="text-3xl font-black text-white mb-2"></h1>
                 <div id="result-team" class="text-xl font-bold mb-8"></div>
-                <button onclick="window.finishTurn()" class="w-full py-4 bg-white text-black font-bold rounded-xl">Close Eyes</button>
+                <button onclick="window.finishTurn()" class="w-full py-4 bg-white text-black font-bold rounded-xl active:scale-95 transition-transform">Close Eyes</button>
             </div>
         `;
     }

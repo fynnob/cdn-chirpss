@@ -8,7 +8,7 @@ window.RoleRegistry.Witch = {
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
 
         let html = `
-            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+            <div class="text-center animate-fade-in bg-slate-900/60 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl backdrop-blur-md relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] animate-pulse">🧙‍♀️</div>
                 <h2 class="text-3xl font-black text-purple-400 uppercase tracking-widest mb-1">The Witch</h2>
                 <p class="text-purple-300/50 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Life and Death are in your hands</p>
@@ -22,10 +22,10 @@ window.RoleRegistry.Witch = {
                     <p class="text-red-400 font-bold text-xs uppercase tracking-widest mb-2">Werewolves attacked:</p>
                     <h3 class="text-3xl font-black text-white mb-4">${victim.name}</h3>
                     <div class="flex gap-2">
-                        <button onclick="window.RoleRegistry.Witch.handleHeal()" class="flex-1 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-green-900/20 uppercase tracking-widest text-sm">
+                        <button onclick="window.RoleRegistry.Witch.handleHeal()" class="flex-1 py-3 bg-green-600  text-white font-bold rounded-xl transition-all shadow-lg shadow-green-900/20 uppercase tracking-widest text-sm active:scale-95 transition-transform">
                             ❤️ Save
                         </button>
-                        <button onclick="document.getElementById('witch-kill-section').classList.remove('opacity-50', 'pointer-events-none'); this.parentElement.parentElement.style.opacity='0.5'; this.parentElement.parentElement.style.pointerEvents='none';" class="flex-1 py-3 bg-white/5 hover:bg-white/10 text-gray-400 font-bold rounded-xl transition-all uppercase tracking-widest text-sm border border-white/10">
+                        <button onclick="document.getElementById('witch-kill-section').classList.remove('opacity-50', 'pointer-events-none'); this.parentElement.parentElement.style.opacity='0.5'; this.parentElement.parentElement.style.pointerEvents='none';" class="flex-1 py-3 bg-white/5  text-gray-400 font-bold rounded-xl transition-all uppercase tracking-widest text-sm border border-white/10 active:scale-95 transition-transform">
                             Pass
                         </button>
                     </div>
@@ -45,10 +45,10 @@ window.RoleRegistry.Witch = {
                 <p class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-4 text-center">Use Poison Potion?</p>
                 <div class="grid grid-cols-2 gap-2">
                     ${targets.map(p => 
-                        `<button onclick="window.RoleRegistry.Witch.handleKill('${p.id}')" class="btn bg-purple-900/40 border-purple-500/30 hover:bg-purple-600 hover:border-purple-400 text-xs">${p.name}</button>`
+                        `<button onclick="window.RoleRegistry.Witch.handleKill('${p.id}')" class="btn bg-purple-900/40 border-purple-500/30   text-xs active:scale-95 transition-transform ">${p.name}</button>`
                     ).join('')}
                 </div>
-                <button onclick="window.finishTurn()" class="w-full mt-4 py-3 bg-white/5 text-gray-500 font-bold rounded-xl hover:bg-white/10 uppercase tracking-widest text-xs">Do Nothing</button>
+                <button onclick="window.finishTurn()" class="w-full mt-4 py-3 bg-white/5 text-gray-500 font-bold rounded-xl  uppercase tracking-widest text-xs active:scale-95 transition-transform">Do Nothing</button>
             </div>
         `;
 
