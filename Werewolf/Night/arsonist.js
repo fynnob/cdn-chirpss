@@ -4,7 +4,7 @@ window.RoleRegistry.Arsonist = {
         const canIgnite = context.dousedIds.length > 0;
         
         return `
-            <div class="text-center animate-fade-in">
+            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <h2 class="text-3xl font-black text-orange-500 mb-2">Arsonist</h2>
                 <p class="text-gray-400 text-xs mb-4">Current Doused: ${context.dousedIds.length}</p>
                 

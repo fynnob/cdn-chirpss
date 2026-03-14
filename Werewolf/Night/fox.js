@@ -10,10 +10,10 @@ window.RoleRegistry.Fox = {
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
 
         return `
-            <div class="text-center animate-fade-in">
+            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2">🦊</div>
                 <h2 class="text-3xl font-black text-orange-400 uppercase tracking-widest mb-1">Fox</h2>
-                <p class="text-orange-300/50 text-xs font-bold uppercase tracking-widest mb-6">Select 3 players to sniff</p>
+                <p class="text-orange-300/50 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Select 3 players to sniff</p>
                 
                 <div class="grid grid-cols-3 gap-2 mb-4">
                     ${targets.map(p => 

@@ -3,19 +3,19 @@ window.RoleRegistry.Seer = {
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
         
         return `
-            <div id="seer-ui" class="text-center animate-fade-in">
-                <div class="inline-block text-6xl mb-2 filter drop-shadow-lg">🔮</div>
+            <div id="seer-ui" class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+                <div class="inline-block text-6xl mb-2 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] animate-pulse">🔮</div>
                 <h2 class="text-3xl font-black text-purple-400 uppercase tracking-widest mb-1">Seer</h2>
-                <p class="text-indigo-300/50 text-xs font-bold uppercase tracking-widest mb-6">Reveal the Truth</p>
+                <p class="text-indigo-300/50 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Reveal the Truth</p>
                 
                 <div class="grid grid-cols-2 gap-3">
                     ${targets.map(p => 
-                        `<button onclick="window.RoleRegistry.Seer.reveal('${p.id}')" class="btn bg-indigo-900/40 border-indigo-500/30 hover:bg-indigo-600 hover:border-indigo-400 shadow-lg shadow-indigo-900/20">${p.name}</button>`
+                        `<button onclick="window.RoleRegistry.Seer.reveal('${p.id}')" class="btn bg-black/40 backdrop-blur-md border border-white/10 text-white/90 hover:bg-white/10 hover:border-white/30 hover:text-white transition-all shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] hover:shadow-[0_0_20px_rgba(255,255,255,0.1),inset_0_0_15px_rgba(255,255,255,0.05)] py-4 rounded-xl font-bold uppercase tracking-wider text-sm group relative overflow-hidden hover:scale-[1.02]">${p.name}</button>`
                     ).join('')}
                 </div>
             </div>
 
-            <div id="seer-result" class="hidden text-center animate-fade-in py-10">
+            <div id="seer-result" class="hidden text-center animate-fade-in py-10 bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <div class="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-white/10">
                     <span id="result-icon" class="text-5xl"></span>
                 </div>

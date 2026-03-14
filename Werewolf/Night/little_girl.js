@@ -1,10 +1,10 @@
 window.RoleRegistry.LittleGirl = {
     renderUI: (context, me) => {
         return `
-            <div id="girl-ui" class="text-center animate-fade-in">
+            <div id="girl-ui" class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2">👧</div>
                 <h2 class="text-3xl font-black text-pink-300 uppercase tracking-widest mb-1">Little Girl</h2>
-                <p class="text-pink-200/50 text-xs font-bold uppercase tracking-widest mb-6">Peek at the Werewolves?</p>
+                <p class="text-pink-200/50 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Peek at the Werewolves?</p>
                 
                 <button onclick="window.RoleRegistry.LittleGirl.peek()" class="w-full py-4 bg-pink-600 text-white font-bold rounded-xl mb-2">PEEK (Risk Death)</button>
                 <button onclick="window.finishTurn()" class="w-full py-4 bg-white/5 text-gray-400 font-bold rounded-xl">Sleep</button>

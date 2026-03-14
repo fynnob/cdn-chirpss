@@ -12,7 +12,7 @@ window.RoleRegistry.WhiteWerewolf = {
         if(targets.length === 0) return `<div class="text-center">No other wolves left. <button class="btn" onclick="finishTurn()">Sleep</button></div>`;
 
         return `
-            <div class="text-center animate-fade-in">
+            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <h2 class="text-3xl font-black text-gray-200 mb-4">White Werewolf</h2>
                 <p class="text-xs mb-4">Eliminate the pack.</p>
                 <div class="grid grid-cols-2 gap-2">

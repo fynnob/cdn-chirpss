@@ -3,10 +3,10 @@ window.RoleRegistry.Survivor = {
         if (!me.vests) me.vests = 2; // Default 2 vests
 
         return `
-            <div class="text-center animate-fade-in">
+            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2">🛡️</div>
                 <h2 class="text-3xl font-black text-yellow-500 uppercase tracking-widest mb-1">Survivor</h2>
-                <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-6">Vests Remaining: ${me.vests}</p>
+                <p class="text-gray-400 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Vests Remaining: ${me.vests}</p>
                 
                 ${me.vests > 0 ? 
                     `<button onclick="window.RoleRegistry.Survivor.useVest('${me.id}')" class="w-full py-4 bg-yellow-600 text-black font-bold rounded-xl mb-4">USE VEST</button>` 

@@ -12,10 +12,10 @@ window.RoleRegistry.Necromancer = {
         }
 
         return `
-            <div class="text-center animate-fade-in">
+            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2">💀</div>
                 <h2 class="text-3xl font-black text-green-700 uppercase tracking-widest mb-1">Necromancer</h2>
-                <p class="text-green-800/50 text-xs font-bold uppercase tracking-widest mb-6">Revive a Brother</p>
+                <p class="text-green-800/50 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Revive a Brother</p>
                 <div class="grid grid-cols-2 gap-2">
                     ${deadWolves.map(p => 
                         `<button onclick="window.RoleRegistry.Necromancer.revive('${p.id}')" class="btn bg-green-900/40 border-green-500/30">${p.name}</button>`

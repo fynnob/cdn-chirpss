@@ -3,8 +3,8 @@ window.RoleRegistry.AuraSeer = {
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
         
         return `
-            <div id="aura-ui" class="text-center animate-fade-in">
-                <div class="inline-block text-6xl mb-2 filter drop-shadow-lg">✨</div>
+            <div id="aura-ui" class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+                <div class="inline-block text-6xl mb-2 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] animate-pulse">✨</div>
                 <h2 class="text-3xl font-black text-indigo-300 uppercase tracking-widest mb-1">Aura Seer</h2>
                 <div class="grid grid-cols-2 gap-2 mt-6">
                     ${targets.map(p => 

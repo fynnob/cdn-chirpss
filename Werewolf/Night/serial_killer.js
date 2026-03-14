@@ -3,10 +3,10 @@ window.RoleRegistry.SerialKiller = {
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
         
         return `
-            <div class="text-center animate-fade-in">
-                <div class="inline-block text-6xl mb-2 filter drop-shadow-lg grayscale">🔪</div>
+            <div class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
+                <div class="inline-block text-6xl mb-2 filter drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] animate-pulse grayscale">🔪</div>
                 <h2 class="text-3xl font-black text-red-600 uppercase tracking-widest mb-1">Serial Killer</h2>
-                <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-6">Everyone is a target</p>
+                <p class="text-gray-500 text-xs font-black uppercase tracking-[0.3em] mb-8 opacity-70">Everyone is a target</p>
                 
                 <div class="grid grid-cols-2 gap-3">
                     ${targets.map(p => 

@@ -8,7 +8,7 @@ window.RoleRegistry.ApprenticeSeer = {
         // Exact copy of Seer logic
         const targets = context.players.filter(p => p.isAlive && p.id !== me.id);
         return `
-            <div id="seer-ui" class="text-center animate-fade-in">
+            <div id="seer-ui" class="text-center animate-fade-in bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden bg-black/60 backdrop-blur-2xl border-y border-white/5 p-8 shadow-[0_0_60px_rgba(0,0,0,0.9)] relative overflow-hidden">
                 <div class="inline-block text-6xl mb-2">🎓</div>
                 <h2 class="text-3xl font-black text-purple-400 uppercase tracking-widest mb-1">Seer (Promoted)</h2>
                 <div class="grid grid-cols-2 gap-3 mt-4">
